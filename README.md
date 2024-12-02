@@ -19,7 +19,7 @@ Este é um projeto simples de vendas online de café gourmet, onde os usuários 
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/cafe-gourmet.git
+git clone https://github.com/moisesfe13/cafe-gourmet.git
 cd cafe-gourmet
 
 # Para Windows
