@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="text-center mt-4">Carrinho de Compras</h2>
+<div class="container">
+    <div class="list-group">
+        {% for item in cart %}
+            <div class="list-group-item">
+                <img src="{{ url_for('static', filename='img/' + item.image) }}" alt="{{ item.name }}">
+                <div class="d-flex justify-content-between w-100">
+                    <span>{{ item.name }} - R$ {{ item.price }}</span>
+                    <span>{{ item.quantity }} x R$ {{ item.price }} = R$ {{ item.quantity * item.price }}</span>
+                    <a href="{{ url_for('remove_from_cart', item_id=item.id) }}" class="btn btn-danger btn-sm">Remover</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="mt-3 text-right">
+        <h3>Total: R$ {{ total }}</h3>
+        <a href="{{ url_for('checkout') }}" class="btn btn-success mt-3">Finalizar Compra</a>
+    </div>
+</div>
+{% endblock %}

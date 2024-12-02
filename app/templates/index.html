@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center my-4">Menu</h1>
+<div class="container">
+    <div class="row">
+        {% for item in menu_items %}
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card shadow-sm border-light">
+                    <img src="{{ url_for('static', filename='img/' + item.image) }}" class="card-img-top" alt="{{ item.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.name }}</h5>
+                        <p class="card-text">R$ {{ item.price }}</p>
+                        <p class="card-text">{{ item.description }}</p>
+                        <div class="quantity-control text-center">
+                            <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity({{ item.id }}, -1)">-</button>
+                            <span id="quantity-{{ item.id }}" class="mx-2">1</span>
+                            <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity({{ item.id }}, 1)">+</button>
+                        </div>
+                        <a href="#" onclick="addToCart({{ item.id }}, {{ item.stock }})" class="btn btn-primary mt-2">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    const quantities = {};
+
+    function updateQuantity(itemId, delta) {
+        if (!quantities[itemId]) quantities[itemId] = 1;
+        quantities[itemId] = Math.max(1, quantities[itemId] + delta);
+        document.getElementById(`quantity-${itemId}`).textContent = quantities[itemId];
+    }
+
+    function addToCart(itemId, maxQuantity) {
+        let quantity = quantities[itemId] || 1;
+        if (quantity > maxQuantity) {
+            quantity = maxQuantity;
+            alert(`Você não pode adicionar mais do que ${maxQuantity} unidades deste item.`);
+        }
+        window.location.href = `/add_to_cart/${itemId}/${quantity}`;
+    }
+</script>
+{% endblock %}

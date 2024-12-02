@@ -1,0 +1,243 @@
+/* CSS - Estilo Personalizado para Café Gourmet */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #6f4f28; /* Cor marrom gourmet */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    color: #f8c200; /* Dourado para hover */
+    text-decoration: underline;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-top: 30px;
+}
+
+/* Estilização para o Menu (Cardápio) */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fafafa;
+    margin-bottom: 30px;
+}
+
+.card img {
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    text-align: center;
+    padding: 25px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #6f4f28; /* Cor mais escura de marrom para o nome */
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-size: 1.1em;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.card .btn-primary {
+    background-color: #8d5d3b; /* Cor do botão de adicionar ao carrinho */
+    border-color: #8d5d3b;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.card .btn-primary:hover {
+    background-color: #7a4c30;
+    border-color: #7a4c30;
+}
+
+.quantity-control {
+    margin: 15px 0;
+}
+
+.quantity-control button {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5em;
+    background-color: #f8c200;
+    border: none;
+    color: #fff;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-control button:hover {
+    background-color: #e1a500;
+}
+
+/* Estilização do Carrinho */
+.list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+    transition: background-color 0.2s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f4f4f4;
+}
+
+.list-group-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card.bg-light {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-body a {
+    text-decoration: none;
+}
+
+.card-body a:hover {
+    text-decoration: underline;
+}
+
+.card-body .btn {
+    background-color: #8d5d3b; /* Cor dourada para o botão */
+    border-color: #8d5d3b;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card-body .btn:hover {
+    background-color: #7a4c30;
+    border-color: #7a4c30;
+}
+
+/* Estilização do total no carrinho */
+.mt-3 h3 {
+    font-size: 1.6em;
+    color: #6f4f28;
+    font-weight: bold;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .list-group-item {
+        padding: 15px;
+    }
+
+    .btn {
+        width: auto;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .quantity-control button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+    }
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form .form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+form button {
+    background-color: #28a745;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    border-radius: 8px;
+}
